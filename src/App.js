@@ -1,10 +1,6 @@
 import "./App.css";
 import React, { Component } from "react";
 import { AnimateOnChange } from "react-animation";
-import Sub from "./components/Sub";
-import Response from "./components/Response";
-import Page from "./components/Page";
-import Travel from "./components/Travel";
 import Seaside from "./pages/Seaside";
 import Shack from "./pages/Shack";
 
