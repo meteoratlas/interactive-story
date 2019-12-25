@@ -19,17 +19,16 @@
 
 .App h1,
 h2 {
-    font-family: "Montserrat", sans-serif;
+    font-family: "Source Sans Pro", sans-serif;
 }
 
 .App p {
     font-family: "Crimson Text", serif;
 }
 
-#page p:first-child:first-letter {
-    color: #666;
+.page p:first-letter {
+    color: rgb(187, 31, 31);
     float: left;
-    font-family: Georgia;
     font-size: 75px;
     line-height: 60px;
     padding-top: 4px;
