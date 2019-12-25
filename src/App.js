@@ -1,8 +1,6 @@
 import "./App.css";
 import React from "react";
 import { AnimateOnChange } from "react-animation";
-import Seaside from "./pages/Seaside";
-import Shack from "./pages/Shack";
 import { StoryProvider } from "./util/StoryContext";
 import Story from "./components/Story";
 

@@ -23,26 +23,24 @@ class Seaside extends Component {
     };
     render() {
         return (
-            <div id="story-body">
-                <div className="page">
-                    <h2>The Seaside</h2>
-                    <p>
-                        The <Sub t="sea" c={this.testCallback2} /> stretches
-                        forever in front of you, a blanket of obsidian cold and
-                        forboding. You instinctively take a step back,{" "}
-                        <Sub t="sand" c={this.testCallback} />
-                        buckling under your shoes. A persistant wind urges you
-                        south, towards an{" "}
-                        <Travel to={this.props.to} t="abandoned shack." />
-                    </p>
-                </div>
+            <>
+                <h2>The Seaside</h2>
+                <p>
+                    The <Sub t="sea" c={this.testCallback2} /> stretches forever
+                    in front of you, a blanket of obsidian cold and forboding.
+                    You instinctively take a step back,{" "}
+                    <Sub t="sand" c={this.testCallback} />
+                    buckling under your shoes. A persistant wind urges you
+                    south, towards an{" "}
+                    <Travel to={this.props.to} t="abandoned shack." />
+                </p>
                 <AnimateOnChange>
                     <Response
                         className={this.state.animateResp}
                         text={this.state.interactText}
                     />
                 </AnimateOnChange>
-            </div>
+            </>
         );
     }
 }

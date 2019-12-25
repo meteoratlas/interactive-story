@@ -26,7 +26,7 @@ h2 {
     font-family: "Crimson Text", serif;
 }
 
-.page p:first-letter {
+.page p:first-of-type:not(#response):first-letter {
     color: rgb(187, 31, 31);
     float: left;
     font-size: 75px;
