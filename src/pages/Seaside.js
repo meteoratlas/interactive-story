@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Sub from "../components/Sub";
 import Travel from "../components/Travel";
 import Response from "../components/Response";
+import Shack from "./Shack";
 import { AnimateOnChange } from "react-animation";
 
 class Seaside extends Component {

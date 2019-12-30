@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 import Seaside from "../pages/Seaside";
+import Intro from "../pages/Intro";
 
 const StoryContext = React.createContext([{}, () => {}]);
 
 const StoryProvider = props => {
-    const [state, setState] = useState({ page: <Seaside /> });
+    const [state, setState] = useState({ page: <Intro /> });
     return (
         <StoryContext.Provider value={[state, setState]}>
             {props.children}
