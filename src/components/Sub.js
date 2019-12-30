@@ -4,9 +4,8 @@ const Sub = props => {
     return (
         <React.Fragment>
             <span className="info-span" onClick={props.c}>
-                {props.t}
+                {props.children}
             </span>
-            <span> </span>
         </React.Fragment>
     );
 };

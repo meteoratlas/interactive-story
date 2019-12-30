@@ -15,8 +15,17 @@ const Shack = props => {
         );
     };
     const lookRubble = () => {
-        // check inventory
-        setInteractText("You find nothing further of note.");
+        if (!state.inv["hasStone"]) {
+            setState(prev => ({
+                ...prev,
+                inv: { ...prev.inv, hasStone: true }
+            }));
+            setInteractText(
+                "You clear the rubble as best you can. Underneath, you find a small stone, its weight comforting in your hand. You decide to take it with you."
+            );
+        } else {
+            setInteractText("You find nothing further of note.");
+        }
     };
     return (
         <>

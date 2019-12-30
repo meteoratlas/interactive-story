@@ -23,15 +23,16 @@ const Seaside = () => {
         <>
             <h2>The Seaside</h2>
             <p>
-                The <Sub t="sea" c={lookSea} /> stretches forever in front of
+                The <Sub c={lookSea}>sea</Sub> stretches forever in front of
                 you, a blanket of obsidian cold and forboding. You instinctively
-                take a step back, <Sub t="sand" c={lookSand} />
+                take a step back, <Sub c={lookSand}>sand</Sub>
                 buckling under your shoes. A persistant wind urges you south,
-                towards an{" "}
+                towards an
                 <Travel
-                    to={() => setState({ page: <Shack /> })}
-                    t="abandoned shack."
-                />
+                    to={() => setState(prev => ({ ...prev, page: <Shack /> }))}
+                >
+                    abandoned shack.
+                </Travel>
             </p>
             <AnimateOnChange>
                 <Response text={interactText} />

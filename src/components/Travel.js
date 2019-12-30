@@ -4,9 +4,8 @@ const Travel = props => {
     return (
         <React.Fragment>
             <span className="travel-span" onClick={props.to}>
-                {props.t}
+                {props.children}
             </span>
-            <span> </span>
         </React.Fragment>
     );
 };
