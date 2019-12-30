@@ -6,7 +6,9 @@ const Story = () => {
     const [state, setState] = useContext(StoryContext);
     return (
         <div id="story-body">
-            <div className="page">{state.page}</div>
+            <AnimateOnChange>
+                <div className="page">{state.page}</div>
+            </AnimateOnChange>
         </div>
     );
 };

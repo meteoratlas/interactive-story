@@ -5,7 +5,7 @@ import Intro from "../pages/Intro";
 const StoryContext = React.createContext([{}, () => {}]);
 
 const StoryProvider = props => {
-    const [state, setState] = useState({ page: <Intro /> });
+    const [state, setState] = useState({ page: <Seaside /> });
     return (
         <StoryContext.Provider value={[state, setState]}>
             {props.children}
