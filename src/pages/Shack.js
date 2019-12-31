@@ -4,6 +4,7 @@ import Sub from "../components/Sub";
 import Travel from "../components/Travel";
 import Response from "../components/Response";
 import { AnimateOnChange } from "react-animation";
+import InsideShack from "./InsideShack";
 import Seaside from "./Seaside";
 
 const Shack = props => {
@@ -45,8 +46,13 @@ const Shack = props => {
   const shackStatus = () => {
     return state.inv["shackOpen"] ? (
       <span>
-        The door <Travel>into the shack</Travel> sits open, bobbing slightly in
-        the wind.
+        The door{" "}
+        <Travel
+          to={() => setState(prev => ({ ...prev, page: <InsideShack /> }))}
+        >
+          into the shack
+        </Travel>{" "}
+        sits open, bobbing slightly in the wind.
       </span>
     ) : (
       <span>
