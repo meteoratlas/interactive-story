@@ -1,12 +1,13 @@
 import React, { useState } from "react";
 import Seaside from "../pages/Seaside";
+import Grove from "../pages/Grove";
 import Intro from "../pages/Intro";
 
 const StoryContext = React.createContext([{}, () => {}]);
 
 const StoryProvider = props => {
   const [state, setState] = useState({
-    page: <Seaside />,
+    page: <Grove />,
     inv: {}
   });
   return (

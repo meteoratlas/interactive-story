@@ -4,6 +4,7 @@ import Sub from "../components/Sub";
 import Travel from "../components/Travel";
 import Response from "../components/Response";
 import { AnimateOnChange } from "react-animation";
+import TSense from "../mechanisms/TSense";
 import Shack from "./Shack";
 
 const Grove = () => {
