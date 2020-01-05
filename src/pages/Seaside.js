@@ -4,6 +4,7 @@ import Sub from "../components/Sub";
 import Travel from "../components/Travel";
 import Response from "../components/Response";
 import Shack from "./Shack";
+import Floodgate from "./Floodgate";
 import { AnimateOnChange } from "react-animation";
 
 const Seaside = () => {
@@ -25,8 +26,12 @@ const Seaside = () => {
       <p>
         The <Sub c={lookSea}>sea</Sub> stretches forever in front of you, a
         blanket of obsidian cold and forboding. You instinctively take a step
-        back, <Sub c={lookSand}>sand</Sub> buckling under your shoes. A
-        persistant wind urges you south, towards an{" "}
+        back, <Sub c={lookSand}>sand</Sub> buckling under your shoes. The walls
+        that surround the island lie{" "}
+        <Travel to={() => setState(prev => ({ ...prev, page: <Floodgate /> }))}>
+          north
+        </Travel>
+        , while a persistant wind urges you south, towards an{" "}
         <Travel to={() => setState(prev => ({ ...prev, page: <Shack /> }))}>
           abandoned shack.
         </Travel>
