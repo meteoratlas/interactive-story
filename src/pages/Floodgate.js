@@ -52,6 +52,19 @@ const Floodgate = () => {
       "Faint fronds of green wave over the wall, as if taunting you. The trees that hold them must be absurdly tall."
     );
   };
+  const reportFloodgateStatus = () => {
+    return state.inv["floodgateOpen"] ? (
+      <span>
+        The enormous floodgate is currently open, revealing a{" "}
+        <Travel>causeway</Travel> to the centre of the island.
+      </span>
+    ) : (
+      <span>
+        If you want to reach the inside of the island, you will need to{" "}
+        <Sub c={raiseGate}>raise the gate</Sub>.
+      </span>
+    );
+  };
   return (
     <>
       <h1>The Floodgate ({state.inv["floodgateOpen"] ? "Open" : "Closed"})</h1>
@@ -60,9 +73,8 @@ const Floodgate = () => {
         <Sub c={lookWall}>perimeter wall</Sub> of concrete cuts off access to
         the rest of the island, only the crowns of nearby{" "}
         <Sub c={lookTrees}>palm trees</Sub> peeking over. A small pile of{" "}
-        <Sub c={lookRubble}>rubble</Sub> sits beside the wall. If you want to
-        reach the inside of the island, you will need to{" "}
-        <Sub c={raiseGate}>raise the gate</Sub>. You can also{" "}
+        <Sub c={lookRubble}>rubble</Sub> sits beside the wall.{" "}
+        {reportFloodgateStatus()} You can also{" "}
         <Travel to={() => setState(prev => ({ ...prev, page: <Seaside /> }))}>
           head west, back to the shore
         </Travel>

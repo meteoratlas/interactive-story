@@ -7,7 +7,7 @@ import { AnimateOnChange } from "react-animation";
 import Shack from "./Shack";
 
 const InsideShack = () => {
-  const [, setState] = useContext(StoryContext);
+  const [state, setState] = useContext(StoryContext);
   const [interactText, setInteractText] = useState("");
   const lookPhoto = () => {
     setInteractText(
@@ -18,6 +18,19 @@ const InsideShack = () => {
     setInteractText(
       "A small collection of handmade wooden toys - tops, rocking horses, and dolls. They are well made, but a handful of imperfections imply their creator was not a master of his craft. None of them seem immediately useful."
     );
+  };
+  const reportLever = () => {
+    if (!state.inv["floodgateOpen"]) {
+      setState(prev => ({
+        ...prev,
+        inv: { ...prev.inv, floodgateOpen: true }
+      }));
+      setInteractText(
+        "The lever is almost impossibly heavy, but after straining your back it slowly snaps into position with a satisfying, resonant snap. You hear a mechanical roar from somewhere west on the island, as if something massive was pulled into the sky."
+      );
+    } else {
+      setInteractText("You have already moved the lever.");
+    }
   };
   const lookBed = () => {
     setInteractText(
@@ -33,7 +46,8 @@ const InsideShack = () => {
         containing only a desk and a <Sub c={lookBed}>bed</Sub>. Cobwebs litter
         the corners of the ceiling, and dust lines each surface. On a desk below
         a window sits a <Sub c={lookPhoto}>framed photograph</Sub> and a few
-        assorted <Sub c={lookKnacks}>knick-knacks</Sub>. The door leads{" "}
+        assorted <Sub c={lookKnacks}>knick-knacks</Sub>. A conspicuous{" "}
+        <Sub c={reportLever}>lever</Sub> sits beside the desk. The door leads{" "}
         <Travel to={() => setState(prev => ({ ...prev, page: <Shack /> }))}>
           {" "}
           back out to the beach.
