@@ -9,6 +9,19 @@ import Seaside from "./Seaside";
 const Floodgate = () => {
   const [state, setState] = useContext(StoryContext);
   const [interactText, setInteractText] = useState("");
+  const lookRubble = () => {
+    if (!state.inv["hasStone"]) {
+      setState(prev => ({
+        ...prev,
+        inv: { ...prev.inv, hasStone: true }
+      }));
+      setInteractText(
+        "You clear the rubble as best you can. Underneath, you find a small stone, its weight comforting in your hand. You decide to take it with you."
+      );
+    } else {
+      setInteractText("You find nothing further of note.");
+    }
+  };
   const lookWall = () => {
     setInteractText(
       <span>
@@ -46,8 +59,9 @@ const Floodgate = () => {
         Before you lies a massive floodgate. On each side, a long{" "}
         <Sub c={lookWall}>perimeter wall</Sub> of concrete cuts off access to
         the rest of the island, only the crowns of nearby{" "}
-        <Sub c={lookTrees}>palm trees</Sub> peeking over. If you want to reach
-        the inside of the island, you will need to{" "}
+        <Sub c={lookTrees}>palm trees</Sub> peeking over. A small pile of{" "}
+        <Sub c={lookRubble}>rubble</Sub> sits beside the wall. If you want to
+        reach the inside of the island, you will need to{" "}
         <Sub c={raiseGate}>raise the gate</Sub>. You can also{" "}
         <Travel to={() => setState(prev => ({ ...prev, page: <Seaside /> }))}>
           head west, back to the shore

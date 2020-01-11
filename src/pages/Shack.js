@@ -15,19 +15,7 @@ const Shack = props => {
       "The gull's voice is faint, distant. The birds avoid this place."
     );
   };
-  const lookRubble = () => {
-    if (!state.inv["hasStone"]) {
-      setState(prev => ({
-        ...prev,
-        inv: { ...prev.inv, hasStone: true }
-      }));
-      setInteractText(
-        "You clear the rubble as best you can. Underneath, you find a small stone, its weight comforting in your hand. You decide to take it with you."
-      );
-    } else {
-      setInteractText("You find nothing further of note.");
-    }
-  };
+
   const lookDoor = () => {
     if (state.inv["hasStone"] && !state.inv["shackOpen"]) {
       setState(prev => ({
@@ -68,10 +56,8 @@ const Shack = props => {
         Dense pine boards scored by wind and sand, the humble shack lies
         situated atop a small outcropping of rocks overlooking the sea. Its roof
         is half-collapsed, and if anyone ever lived here they are gone now. The
-        windows are painted with permanent haze and{" "}
-        <Sub c={lookRubble}>a pile of rubble</Sub> sits adjacent, either a
-        forgotten repair or the natural accumulation of debris that slowly
-        engulfs any house. {shackStatus()} Somewhere in the distance, a{" "}
+        windows are painted with permanent haze, and the walls with cracked red
+        paint. {shackStatus()} Somewhere in the distance, a{" "}
         <Sub c={lookGull}>gull</Sub> cries out. The path you trod to get here
         winds back down, inviting a{" "}
         <Travel to={() => setState(prev => ({ ...prev, page: <Seaside /> }))}>
