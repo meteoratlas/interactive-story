@@ -7,7 +7,7 @@ import { AnimateOnChange } from "react-animation";
 import Shack from "./Shack";
 
 const InsideShack = () => {
-  const [state, setState] = useContext(StoryContext);
+  const [, setState] = useContext(StoryContext);
   const [interactText, setInteractText] = useState("");
   const lookPhoto = () => {
     setInteractText(

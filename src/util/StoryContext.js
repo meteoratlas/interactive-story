@@ -1,8 +1,6 @@
 import React, { useState } from "react";
 import Seaside from "../pages/Seaside";
-import Grove from "../pages/Grove";
-import Intro from "../pages/Intro";
-import Floodgate from "../pages/Floodgate";
+// import Intro from "../pages/Intro";
 
 const StoryContext = React.createContext([{}, () => {}]);
 

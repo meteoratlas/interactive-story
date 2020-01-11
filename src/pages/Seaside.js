@@ -8,7 +8,7 @@ import Floodgate from "./Floodgate";
 import { AnimateOnChange } from "react-animation";
 
 const Seaside = () => {
-  const [state, setState] = useContext(StoryContext);
+  const [, setState] = useContext(StoryContext);
   const [interactText, setInteractText] = useState("");
   const lookSea = () => {
     setInteractText(
