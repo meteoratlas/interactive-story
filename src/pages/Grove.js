@@ -5,6 +5,7 @@ import Travel from "../components/Travel";
 import Response from "../components/Response";
 import { AnimateOnChange } from "react-animation";
 import TSense from "../mechanisms/TSense";
+import OutsideGreenhouse from "./OutsideGreenhouse";
 
 const Grove = () => {
   const [state, setState] = useContext(StoryContext);
@@ -23,8 +24,9 @@ const Grove = () => {
     <>
       <h2>The Forest Grove</h2>
       <p>
-        The trees part, revealing a small clearing in the middle of the forest.
-        In the centre, a <Sub c={lookStones}>ring of stones</Sub> circles a{" "}
+        After a small hike through a verdant forest, the trees part, revealing a
+        small clearing in the middle of the woods. In the centre, a{" "}
+        <Sub c={lookStones}>ring of stones</Sub> circles a{" "}
         <Sub c={lookTree}>tree taller than the rest</Sub>. The wind{" "}
         <TSense
           speed={2000}
@@ -39,7 +41,13 @@ const Grove = () => {
           <Travel>Forward, towards the foot of the mountain</Travel>
         </li>
         <li>
-          <Travel>West, towards the sound of a mechanical hum</Travel>
+          <Travel
+            to={() =>
+              setState(prev => ({ ...prev, page: <OutsideGreenhouse /> }))
+            }
+          >
+            West, towards the sound of a mechanical hum
+          </Travel>
         </li>
         <li>
           <Travel>East, deeper into the forest</Travel>

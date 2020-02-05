@@ -5,6 +5,7 @@ import Travel from "../components/Travel";
 import Response from "../components/Response";
 import { AnimateOnChange } from "react-animation";
 import Seaside from "./Seaside";
+import Grove from "./Grove";
 
 const Floodgate = () => {
   const [state, setState] = useContext(StoryContext);
@@ -56,7 +57,10 @@ const Floodgate = () => {
     return state.inv["floodgateOpen"] ? (
       <span>
         The enormous floodgate is currently open, revealing a{" "}
-        <Travel>causeway</Travel> to the centre of the island.
+        <Travel to={() => setState(prev => ({ ...prev, page: <Grove /> }))}>
+          causeway
+        </Travel>{" "}
+        to the centre of the island.
       </span>
     ) : (
       <span>

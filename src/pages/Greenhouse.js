@@ -4,6 +4,7 @@ import Sub from "../components/Sub";
 import Travel from "../components/Travel";
 import Response from "../components/Response";
 import { AnimateOnChange } from "react-animation";
+import OutsideGreenhouse from "./OutsideGreenhouse";
 
 const Greenhouse = props => {
   const [state, setState] = useContext(StoryContext);
@@ -20,8 +21,15 @@ const Greenhouse = props => {
         The air is thick and humid inside, sunlight trapped inside the foggy
         windows that make up its walls and ceiling. From above, an array of{" "}
         <Sub c={lookMist}>evenly-spaced rods gently mist water</Sub> onto the
-        flora below. The <Travel>door back outside</Travel> creaks slightly as
-        it moves with the wind.
+        flora below. The{" "}
+        <Travel
+          to={() =>
+            setState(prev => ({ ...prev, page: <OutsideGreenhouse /> }))
+          }
+        >
+          door back outside
+        </Travel>{" "}
+        creaks slightly as it moves with the wind.
       </p>
       <AnimateOnChange>
         <Response text={interactText} />
