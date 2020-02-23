@@ -6,6 +6,7 @@ import Response from "../components/Response";
 import { AnimateOnChange } from "react-animation";
 import TSense from "../mechanisms/TSense";
 import OutsideGreenhouse from "./OutsideGreenhouse";
+import Floodgate from "./Floodgate";
 
 const Grove = () => {
   const [state, setState] = useContext(StoryContext);
@@ -33,13 +34,13 @@ const Grove = () => {
           items={["echoes", "murmurs", "whistles", "breezes"]}
         />{" "}
         through the trees. Otherwise, the only notable feature is the path,
-        which spreads from one road into many. The path splits in four
+        which spreads from one road into many. The path splits in a few
         directions:
       </p>
       <ul>
-        <li>
+        {/* <li>
           <Travel>Forward, towards the foot of the mountain</Travel>
-        </li>
+        </li> */}
         <li>
           <Travel
             to={() =>
@@ -49,11 +50,15 @@ const Grove = () => {
             West, towards the sound of a mechanical hum
           </Travel>
         </li>
-        <li>
+        {/* <li>
           <Travel>East, deeper into the forest</Travel>
-        </li>
+        </li> */}
         <li>
-          <Travel>Back to towards the beach</Travel>
+          <Travel
+            to={() => setState(prev => ({ ...prev, page: <Floodgate /> }))}
+          >
+            Back to towards the beach
+          </Travel>
         </li>
       </ul>
       <AnimateOnChange>

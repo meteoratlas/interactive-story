@@ -9,9 +9,7 @@ const App = () => {
   return (
     <StoryProvider>
       <div className="App">
-        <header>
-          <Inventory />
-        </header>
+        <header>{/* <Inventory /> */}</header>
         <AnimateOnChange>
           <Story />
         </AnimateOnChange>

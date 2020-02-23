@@ -12,7 +12,15 @@ const Intro = () => {
         This is an interactive story by Kelly Horan, created using Javascript
         and React. Click on red links to investigate certain objects, and click
         green links to travel to another location.
-        <Travel to={() => setState({ page: <Seaside /> })} t="Begin." />
+      </p>
+      <p>
+        Please note this story is a work in progress; you can explore the
+        island, but there is currently no win condition.
+      </p>
+      <p>
+        <Travel to={() => setState(prev => ({ ...prev, page: <Seaside /> }))}>
+          Begin.
+        </Travel>
       </p>
     </>
   );
