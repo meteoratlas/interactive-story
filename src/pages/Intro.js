@@ -7,7 +7,7 @@ const Intro = () => {
   const [, setState] = useContext(StoryContext);
   return (
     <>
-      <h2>Story Title</h2>
+      <h2>Interactive Story</h2>
       <p>
         This is an interactive story by Kelly Horan, created using Javascript
         and React. Click on red links to investigate certain objects, and click
